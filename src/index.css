@@ -2,7 +2,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: cursive;
+    font-family: monospace;
+    /* font-family: League Spartan; */
 }
 
 :root {
@@ -12,6 +13,10 @@
     --dark-green: #2E3D3C;
     --light-green: #F0FAFB;
 
+    --header-text: 1.1em;
+    --keyword-text: .9em;
+    --status-text: .9em;
+    --small-text: .8em;
 }
 
 header {
@@ -20,11 +25,13 @@ header {
     background-size: cover;
     background-position: center;
     background-color: var(--bg-color);
+
+
 }
 
 
 .hero {
-    padding: 1em 0;
+    padding: 2em 0 1em 0;
 }
 
 .hero-box {
@@ -40,6 +47,10 @@ header {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.job-title {
+    font-size: var(--header-text);
 }
 
 .tag-container {
@@ -126,6 +137,7 @@ header {
 
 .name {
     color: var(--bg-color);
+    font-size: var(--small-text);
 }
 
 .new {
@@ -133,6 +145,7 @@ header {
     background-color: var(--bg-color);
     padding: .5em;
     border-radius: 1.3em;
+    font-size: var(--status-text);
 }
 
 .featured {
@@ -140,10 +153,12 @@ header {
     background-color: var(--dark-green);
     padding: .5em;
     border-radius: 1.3em;
+    font-size: var(--status-text);
 }
 
 .period {
     color: var(--span-text-color);
+    font-size: var(--small-text);
 }
 
 .keywords{
@@ -161,14 +176,19 @@ header {
     border-radius: 6px;
     color: var(--bg-color);
     cursor: pointer;
+    font-size: var(--keyword-text);
 }
 
-@media only screen and (min-width: 950px) {
-    header {
-        background-image: url("../public/images/bg-header-desktop.svg");
-        height: 120px;
+@media only screen and (min-width: 400px) {
+    :root {
+        --header-text: 1.2em;
+        --keyword-text: 1.1em;
+        --status-text: 1em;
+        --small-text: 1em;
     }
+}
 
+@media only screen and (min-width: 800px) {
     .info-box {
         display: flex;
         justify-content: space-between;
@@ -181,15 +201,34 @@ header {
         align-items: center;
     }
 
-    
-    .company-img {
-        width: 50px;
-        margin-top: 0;
-    }
     .keywords {
         border-top: none;
         align-items: center;
         margin-top: 0;
         padding-top: 0;
     }
+}
+
+@media only screen and (min-width: 950px) {
+    :root {
+        --header-text: 1.4em;
+        --keyword-text: 1.3em;
+        --status-text: 1.2em;
+        --small-text: 1.1em;
+    }
+
+    header {
+        background-image: url("../public/images/bg-header-desktop.svg");
+        height: 120px;
+    }
+
+    .hero {
+        padding: 1em 0;
+    }
+        
+    .company-img {
+        width: 50px;
+        margin-top: 0;
+    }
+
 }

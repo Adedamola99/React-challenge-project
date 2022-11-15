@@ -24,9 +24,9 @@ function App() {
     if(tools) {
       keywordList.push(...tools)
     }
-
-
+    
     return filters.every(filter => keywordList.includes(filter))
+
   }
 
   const handleTagClick = (tag) => {
@@ -72,8 +72,8 @@ function App() {
         filters.length > 0 && 
         (
           <div className='tag-container'>
-            {filters.map((filter) => 
-              <div className="tag">
+            {filters.map((filter, index) => 
+              <div key={index} className="tag">
               <span className='tag-name'>{filter}</span><span className='cancel' onClick={() => handlefilterCancel(filter)}>X</span>
             </div>
             )
